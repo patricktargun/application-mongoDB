@@ -1,0 +1,361 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+/*HEADER*/
+header {
+	width: 100%;
+	height: 80px;
+	background-color: #272727;
+	color: #fff;
+	text-align: center;
+}
+
+.site-title {
+	line-height: 80px;
+	font-size: 3rem;
+}
+
+.center-text {
+	text-align: center;
+}
+
+a:hover {
+	cursor: pointer;
+	text-decoration: none;
+	color: #272727;
+}
+
+ul {
+	list-style-type: none;
+}
+
+/* =FORM
+-------------------------------------------------------------- */
+.form-wrapper {
+	margin: 30px 120px;
+}
+
+.form-control:focus {
+  border-color: #272727;
+}
+
+.form-group-title {
+	display: block;
+}
+
+.padding-right {
+	padding: 0 10px 0 0;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.no-title {
+	height: 40px;
+}
+
+/* =FORM COMPONENTS
+-------------------------------------------------------------- */
+
+.form-notes {
+	color: #777;
+	opacity: 1;
+	font-weight: 300;
+}
+
+.phone-form {
+	width: 35%;
+}
+
+.ext-form {
+	width: 13%;
+}
+
+.form-margin-top{
+	margin: 15px 0 5px 5px;
+}
+
+.submit-btn {
+	height: 50px;
+	width: 150px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	color: #272727;
+	text-align: center;
+	font-size: 1.5rem;
+	margin-top: 15px;
+}
+
+.submit-btn:hover {
+	background-color: #272727;
+	color: #fff;
+}
+
+.form-group .help-block {
+  display: none;
+}
+
+.form-group.has-error .help-block {
+  display: block;
+}
+
+.check-status {
+	text-align: right;
+	margin-top: 17px;
+	line-height: 15px;
+}
+
+.checkbox {
+	margin-left: 15px;
+}
+
+/* =Industry Selector
+-------------------------------------------------------------- */
+
+.bucket-wrapper {
+	height: 35px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	width: 100%;
+	line-height: 35px;
+	padding: 0 12px;
+	background-color: #fff;
+}
+.bucket {
+	display: inline-block;
+}
+
+.select-box {
+	overflow: auto;
+	height: 100px;
+	border-radius: 4px;
+	line-height: 26px;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	background-color: #fff;
+}
+
+.parent-select {
+	width: 35%;
+}
+
+.child-select {
+	width: 65%;
+	border-right: 1px solid #ccc;
+}
+
+/*ICONS*/
+.indy-select-icon {
+	font-size: 1.5rem;
+	margin-left: 3px;
+}
+
+.indy-select:hover {
+	cursor: pointer;
+	color: #F05F18;
+}
+
+.add-icon {
+	font-size: 1.5rem;
+	margin-left: 3px;
+}
+.add-icon:hover {
+	color: #00D2A9;
+	cursor: pointer;
+}
+.remove-icon {
+	font-size: 1.5rem;
+	margin: 0 15px 0 3px;
+}
+.remove-icon:hover {
+	color: #c14744;
+	cursor: pointer;
+}
+
+/*Always show Scroll Bar*/
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+    background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.3);
+}
+
+/* =APPLICATION REVIEW
+-------------------------------------------------------------- */
+
+.next-steps {
+	border: 1px solid #272727;
+	width: 900px;
+	padding: 15px;
+	font-size: 1.9rem;
+	line-height: 40px;
+	border-radius: 3px;
+	margin: 0 auto;
+	background-color: #FAFAFA;
+}
+
+.contact-next-steps {
+	font-weight: 400;
+}
+
+.next-step-icon {
+	font-size: 7rem;
+}
+
+/* =APPLICATION LOGIN
+-------------------------------------------------------------- */
+
+.status-key-login-wrapper {
+	width: 600px;
+	height: auto;
+	border: 1px solid #272727;
+	margin: 20px auto;
+	padding: 20px 40px 40px 40px;
+	border-radius: 3px;
+	background-color: #FAFAFA;
+}
+
+.login-tools {
+	text-align: right;
+	margin-top: 17px;
+	line-height: 25px;
+}
+
+/* = STATUS
+-------------------------------------------------------------- */
+
+.status-icon {
+	font-size: 2.8rem;
+	margin-left: 10px;
+}
+
+.icon-done {
+	color: #00D2A9;
+}
+.icon-doing {
+	color: #EDD128;
+}
+
+.arrow-down {
+	font-size: 3rem;
+	line-height: 10px;
+}
+
+.title-status {
+	display: inline-block;
+	font-size: 2.5rem;
+}
+
+.app-title-status {
+	display: inline-block;
+	line-height: 80px;
+	font-size: 3rem;
+}
+
+.log-out {
+	line-height: 80px;
+	font-size: 2rem;
+	float: right;
+}
+
+.edit {
+	line-height: 18px;
+	font-size: 2rem;
+    position: relative;
+    bottom: 60px;
+    right: 10px;
+    float: right;
+}
+
+.app-info {
+	border: 1px solid #272727;
+	background-color: #FAFAFA;
+	width: 100%;
+	padding: 15px;
+	font-size: 1.7rem;
+	line-height: 40px;
+	border-radius: 3px;
+	margin: 0 auto 30px auto;
+}
+
+.industry-status {
+	font-size: 1.4rem;
+}
+
+.form-edit {
+	display: inline-block;
+	width: auto;
+	float: right;
+}
+.form-edit-city {
+	display: inline-block;
+	width: auto;
+	margin-left: 30px;
+}
+
+/*Date Stuff*/
+
+.date-picker {
+	text-align: center;
+}
+
+.date-pick-box {
+	overflow-y: scroll;
+	height: 100px;
+	width: 120px;
+	margin: 0 auto;
+	border-radius: 4px;
+	line-height: 26px;
+	border: 1px solid #ccc;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	background-color: #fff;
+}
+
+.display-times {
+	line-height: 15px;
+	margin-top: 10px;
+}
+.title-date-status{
+	font-size: 2.5rem;
+	margin: 20px 0 10px 0;
+}
+.date-btn {
+	line-height: 18px;
+	font-size: 2rem;
+}
+
+/* =Media Queries
+-------------------------------------------------------------- */
+@media (max-width: 1200px) {
+
+}
+
+/* Portrait tablets and medium desktops */
+@media (max-width: 992px) {
+
+}
+/* Portrait tablets and small desktops */
+@media (max-width: 768px) {
+
+}
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+}
+
+/* Phones and down */
+@media (max-width: 480px) {
+
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Application</title>
+    <link rel="shortcut icon" type="/img/png" href="/Example-Favicon.png"/>
+    <!-- Open CSS -->
+    <link href="/styles/bootstrap.min.css" rel="stylesheet">
+    <link href="//code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+    <!-- Styles -->
+    <link href="/styles/style.css" rel="stylesheet">
+  </head>
+
+  <body ng-controller="mainCtrl">
+  <header>
+    <p class="site-title">The Application</p>
+  </header>
+  
+    <ng-view></ng-view>
+
+
+
+
+    <!-- jQuery & Angular -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+
+    <!-- Scripts -->
+    <script src="/scripts/data.js"></script>
+    <script src="/scripts/app.js"></script>
+    <!-- directives -->
+    <script src="/scripts/directives/showErrors.js"></script>
+    <script src="/scripts/directives/zipcodeAuto.js"></script>
+    <script src="/scripts/directives/pending.js"></script>
+    <script src="/scripts/directives/passwordVerify.js"></script>
+    <!-- Controllers -->
+    <script src="/scripts/controllers/mainCtrl.js"></script>
+    <script src="/scripts/controllers/registerCtrl.js"></script>
+    <script src="/scripts/controllers/appStatusCtrl.js"></script>
+    <script src="/scripts/controllers/datePickCtrl.js"></script>
+    <!-- Services -->
+    <script src="/scripts/services/applicantService.js"></script>
+    <script src="/scripts/services/dateService.js"></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<div class="form-wrapper">
+	<div class="center-text">
+	<h1>Application Status</h1>
+	</div>
+		<form class="status-key-login-wrapper" ng-show="loginShow">
+		    <div class="form-group">
+		    	<label class="form-group-title form-margin-top">Email</label>
+		    	<input type="email" class="form-control" ng-model="appProfile.email" placeholder="Email Address" required>
+		    	<label class="form-group-title form-margin-top">Password</label>
+		    	<input type="password" class="form-control" ng-model="appProfile.password" placeholder="Password" required>
+		    </div>
+		    <div class="row">
+	      		<div class="col-xs-6">
+	        		<button class="submit-btn" ng-click="login(appProfile)">Enter</button>
+				</div>
+				<div class="col-xs-6">
+				<ul class="login-tools">
+					<li><a ng-click="toForm()"><i class="ion-ios7-undo"></i> Back to Form</a></li>
+					<li><a ng-click="loginToggle()">Forgot Password</a></li>
+				</ul>
+				</div>
+			</div>
+	    </form>
+	    <form class="status-key-login-wrapper" ng-show="passwordResetShow">
+		    <div class="form-group">
+		    	<label class="form-group-title form-margin-top">Email</label>
+		    	<input type="email" class="form-control" ng-model="appProfile.email" placeholder="Email Address" required>
+		    </div>
+		    <div class="row">
+	      		<div class="col-xs-6">
+	        		<button class="submit-btn" ng-click="forgotPassword(appProfile)">Reset Password</button>
+				</div>
+				<div class="col-xs-6">
+				<ul class="login-tools">
+					<li><a ng-click="loginToggle()">Login</a></li>
+					<li><a ng-click="toForm()">Back to Form</a></li>
+				</ul>
+				</div>
+			</div>
+	    </form>
+</div>

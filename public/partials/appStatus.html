@@ -1,0 +1,129 @@
+<div class="form-wrapper">
+
+	<div class="row">
+		<div class="col-md-12">
+			<p class="app-title-status">{{user.companyName}} - Application Status</p>
+			<a class="log-out" ng-click="logout()">Log Out <i class="ion-log-out"></i></a>
+		</div>
+	</div>
+
+	<div class="app-info">
+		<div class="row center-text">
+			<div class="col-md-4">
+				<p class="title-status">Completed Form </p><i class="ion-ios7-checkmark status-icon icon-done"></i>
+			</div>
+			<div class="col-md-4">
+				<p class="title-status">10 Minute Call </p><i class="ion-ios7-circle-filled status-icon icon-doing"></i>
+			</div>
+			<div class="col-md-4">
+				<p class="title-status">Pending Result </p><i class="ion-ios7-circle-outline status-icon icon-to-to"></i>
+			</div>
+		</div>
+		<div class="row center-text">
+			<div class="col-md-4">
+			</div>
+			<div class="col-md-4">
+				<i class="ion-ios7-arrow-down arrow-down" ng-show="callPend"></i>
+			</div>
+			<div class="col-md-4">
+				<i class="ion-ios7-arrow-down arrow-down" ng-show="resultsPend"></i>
+			</div>
+		</div>
+		<!-- PICKING DATES -->
+		<div ng-show="datePicker" ng-controller="datePickCtrl as vm">
+			<div class="row date-picker" ng-show="vm.availableDates">
+				<div class="col-md-4">
+					<h4>{{vm.showTimesOne[0] | date : "EEEE',' MMM d"}}</h4>
+					<div class="date-pick-box">
+						<div ng-repeat="times in vm.showTimesOne">
+							<p class="display-times"><a ng-click="vm.pickedDate(times, vm.daysToShow[0])">{{times | date : 'h:mm a'}}</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<h4>{{vm.showTimesTwo[0] | date : "EEEE',' MMM d"}}</h4>
+					<div class="date-pick-box">
+						<div ng-repeat="times in vm.showTimesTwo">
+							<p class="display-times"><a ng-click="vm.pickedDate(times, vm.daysToShow[1])">{{times | date : 'h:mm a'}}</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<h4>{{vm.showTimesThree[0] | date : "EEEE',' MMM d"}}</h4>
+					<div class="date-pick-box">
+						<div ng-repeat="times in vm.showTimesThree">
+							<p class="display-times"><a ng-click="vm.pickedDate(times, vm.daysToShow[2])">{{times | date : 'h:mm a'}}</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row date-picker">
+				<div ng-show="vm.showSelected" class="col-md-12">
+					<p class="title-date-status">Selected Appointment:</p>
+					<h4>{{vm.selectedDate | date: "EEEE',' MMM d 'at' h:mm a"}}</h4>
+					<a class="date-btn" ng-click="vm.finalizedAppoint(vm.selectedDate)">Submit Appointment <i class="ion-clock"></i></a>
+				</div>
+				<div ng-show="vm.finalTime" class="col-md-12">
+					<p class="title-date-status">Your Appointment will be at:</p>
+					<h4>{{vm.selectedDate | date: "EEEE',' MMM d 'at' h:mm a"}}</h4>
+				</div>
+			</div>
+		</div>
+		<!-- END PICKING DATES -->
+		<div ng-show="pickedDate" class="center-text">
+			<p class="title-date-status">Your Appointment will be at:</p>
+			<h4>{{user.appAppointment | date: "EEEE',' MMM d 'at' h:mm a" }}</h4>
+		</div>
+		<!-- SHOW PICKED DATE -->
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<p class="app-title-status">Company Details</p>
+		</div>
+	</div>
+	<div class="app-info" ng-show="appInfo">
+		<div class="row">
+			<div class="col-md-5">
+				<ul>
+					<li><span class="contact-next-steps">Comapny Name:</span> {{user.companyName}}</li>
+					<li><span class="contact-next-steps">Contact Name:</span> {{user.firstName}} {{user.lastName}}</li>
+					<li><span class="contact-next-steps">Contact Position:</span> {{user.contactPosition}}</li>
+					<li><span class="contact-next-steps">Contact Email:</span> {{user.email}}</li>
+					<li><span class="contact-next-steps">Contact Phone:</span> {{user.contactPhone}}</li>
+				</ul>
+			</div>
+			<div class="col-md-7">
+				<ul>
+					<li><span class="contact-next-steps">Address:</span> {{user.city}}, {{user.state}}</li>
+					<li><span class="contact-next-steps">Business Discription:</span> {{user.businessDeiscription}}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="app-info" ng-show="editAppInfo">
+		<div class="row">
+			<div class="col-md-5">
+				<ul>
+					<li><span class="contact-next-steps">Comapny Name:</span> <input class="form-control form-edit" value="{{user.companyName}}" ng-model="user.companyName"></li>
+					<li><span class="contact-next-steps">Contact Name:</span> <input class="form-control form-edit" value="{{user.firstName}} {{user.lastName}}"></li>
+					<li><span class="contact-next-steps">Contact Position:</span> <input class="form-control form-edit" value="{{user.contactPosition}}" ng-model="user.contactPosition"></li>
+					<li><span class="contact-next-steps">Contact Email:</span> <input class="form-control form-edit" value="{{user.email}}" ng-model="user.email"></li>
+					<li><span class="contact-next-steps">Contact Phone:</span> <input class="form-control form-edit" value="{{user.contactPhone}}" ng-model="user.contactPhone"></li>
+				</ul>
+			</div>
+			<div class="col-md-7">
+				<ul>
+					<li><span class="contact-next-steps">Address:</span><input class="form-control form-edit-city" value="{{user.city}}, {{user.state}}"></li>
+					<li><span class="contact-next-steps">Business Discription:</span> {{user.businessDeiscription}}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<a class="edit" ng-show="appInfo" ng-click="editInfoBtn()">Edit <i class="ion-gear-b"></i></a>
+	<a class="edit" ng-show="editAppInfo" ng-click="submitEditsBtn(user)">Submit Edits <i class="ion-filing"></i></a>
+</div>
+
+
+
+
+

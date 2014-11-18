@@ -1,0 +1,143 @@
+  <form class="form-wrapper" name="applicationForm" novalidate>
+    <div class="row">
+      <div class="form-group" show-errors>
+        <label class="form-group-title form-margin-top">Company Name</label>
+        <div class="col-sm-12 no-padding">
+        <input type="text" class="form-control" name="companyName" ng-model="user.companyName" placeholder="Name of your firm" required>
+          <p class="help-block" ng-if="applicationForm.companyName.$error.required">Company name is required</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group" show-errors>
+        <label class="form-group-title form-margin-top">Contact Person</label>
+        <div class="col-sm-4 padding-right">
+          <input type="text" class="form-control" name="firstName" ng-model="user.firstName" placeholder="First Name" required>
+          <p class="help-block" ng-if="applicationForm.firstName.$error.required">First name required</p>
+        </div>
+        <div class="col-sm-4 padding-right">
+          <input type="text" class="form-control" name="lastName" ng-model="user.lastName" placeholder="Last Name" required>
+          <p class="help-block" ng-if="applicationForm.lastName.$error.required">Last name required</p>
+        </div>
+        <div class="col-sm-4 no-padding">
+          <input type="text" class="form-control" name="contactPosition" ng-model="user.contactPosition" placeholder="Title within the company" required>
+          <p class="help-block" ng-if="applicationForm.contactPosition.$error.required">Please provide your position</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group" show-errors>
+          <div class="col-sm-6 padding-right">
+            <label class="form-group-title form-margin-top">Contact Email</label>
+            <input type="email" class="form-control" name="contactEmail" ng-model="user.email" placeholder="Contact Email" required>
+            <p class="help-block" ng-if="applicationForm.contactEmail.$error.required">Email required</p>
+            <p class="help-block" ng-if="applicationForm.contactEmail.$error.email">Please look over your email</p>
+          </div>
+          <div class="col-sm-3 padding-right">
+            <label class="form-group-title form-margin-top">Password</label>
+            <input type="password" class="form-control" name="userPassword" ng-model="user.password" placeholder="Type a password" required>
+            <p class="help-block" ng-if="applicationForm.userPassword.$error.required">Password required</p>
+          </div>
+          <div class="col-sm-3 no-padding">
+            <div class="no-title"></div>
+            <input type="password" class="form-control" name="confirm_password" ng-model="user.passwordVerify" placeholder="Retype Password" password-verify="user.password" required>
+            <p class="help-block" ng-if="applicationForm.confirm_password.$error.passwordVerify">Passwords do not match</p>
+          </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group" show-errors>
+          <div class="col-sm-4 padding-right">
+            <label class="form-group-title form-margin-top">Phone Number</label>
+            <input type="text" class="form-control" name="contactPhone" ng-model="user.contactPhone" placeholder="Contact Phone Number" required>
+            <p class="help-block" ng-if="applicationForm.contactPhone.$error.required">Phone number required</p>
+          </div>
+          <div class="col-sm-2 padding-right">
+            <div class="no-title"></div>
+            <input type="text" class="form-control" name="phoneExt" ng-model="user.phoneExt" placeholder="Phone Ext">
+          </div>
+          <div class="col-sm-2 padding-right">
+            <label class="form-group-title form-margin-top">Address</label>
+            <input type="text" class="form-control" name="zipcode" zipcode-auto zip="user.zip" state="user.state" city="user.city" ng-model="user.zip" placeholder="Zipcode" required>
+            <p class="help-block" ng-if="applicationForm.zipcode.$error.required">Zipcode required</p>
+          </div>
+          <div class="col-sm-2 padding-right">
+            <div class="no-title"></div>
+            <input type="text" class="form-control" name="city" ng-model="user.city" placeholder="City" required>
+            <p class="help-block" ng-if="applicationForm.city.$error.required">City required</p>
+          </div>
+          <div class="col-sm-2 no-padding">
+            <div class="no-title"></div>
+            <input type="text" class="form-control" name="state" ng-model="user.state" placeholder="State" required>
+            <p class="help-block" ng-if="applicationForm.state.$error.required">State required</p>
+          </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+      <label class="form-group-title form-margin-top">Industries Selector <span class="form-notes">(Max of 3)</span></label>
+          <div>
+              <div class="bucket-wrapper" name="industryBucket" ng-model="user.industryBucket">
+                <section ng-repeat="item in bucket | limitTo: 3" class="bucket">
+                  {{item.name}} <i class="ion-close-circled remove-icon" ng-click="removeFromBucket(item)"></i>
+                </section>
+              </div>
+          </div>
+
+          <div ng-show="selectBoxes">
+            <div class="col-xs-4 select-box parent-select">
+              <section class="link-braces" ng-repeat="parent in parents">
+                <span class="indy-select" ng-click="showChildren(parent)">{{parent.name}} <i class="ion-arrow-right-c indy-select-icon"></i></span>
+              </section>
+            </div>
+
+            <div class="col-xs-8 select-box child-select">
+              <section ng-repeat="child in children">
+                {{child.name}} <i class="ion-plus-circled add-icon" ng-click="addToBucket(child)"></i>
+              </section>
+            </div>
+          </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="form-group">
+        <label class="form-group-title form-margin-top">Business Discription</label>
+        <textarea class="form-control" name="businessDeiscription" ng-model="user.businessDeiscription" rows="2"></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="checkbox" show-errors>
+        <label class="form-group-title">
+          <input type="checkbox" name="checkedTerms" value="" required>
+            I accept the application <a>Terms of Use</a>
+            <p class="help-block" ng-if="applicationForm.checkedTerms.$error.required">Please review terms</p>
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-6">
+        <button class="submit-btn" ng-click="register(user)" pending>Submit Application</button>
+      </div>
+      <div class="col-xs-6 check-status">
+        <p>Already applied?</p>
+        <a ng-click="stausLogin()">Check status here</a>
+      </div>
+    </div>
+
+  </form>
+
+
+
+
+
+
+
+
